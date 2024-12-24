@@ -1,4 +1,3 @@
-import React from 'react'
 import { ReactTyped } from "react-typed";
 import { useNavigate } from 'react-router-dom'
 
