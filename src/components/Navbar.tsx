@@ -4,6 +4,7 @@ import { AiOutlineClose, AiOutlineMenu } from 'react-icons/ai'
 import LoginButton from './LoginButton'
 import LogoutButton from './LogoutButton'
 import logo from '../assets/logo.png'
+import { useNavigate } from 'react-router-dom'
 
 const Navbar = () => {
     // Grab user name
@@ -15,18 +16,26 @@ const Navbar = () => {
         setNav(!nav)
     }
 
+    // Navigation to image generation page
+    const navigate = useNavigate()
+  
+    const handleClick = () => {
+    navigate('/generate')
+    }
+
+
   return (
     <>
-    <div className="flex justify-center items-center h-24 max-w-[1240px] mx-auto px-4 text-white">
-        <img src={logo} alt="Aura Logo" className="w-[420px] h-[420px] object-contain pr-11"/>
+    <div className="flex justify-center items-center content-center h-24 max-w-[1240px] mx-auto px-4 text-white">
+        <img src={logo} alt="Aura Logo" className="w-[500px] h-[500px] object-contain pr-11"/>
         {/* <h1 className="w-full text-3xl font-bold text-[#38c292]">Aura</h1> */}
-        <ul className="hidden md:flex">
+        <ul className="hidden md:flex justify-center items-center">
             <li className="p-4"><a href='/'>Home</a></li>
-            <li className="p-4">Generate</li>
+            <li onClick={handleClick} className="p-4"><a href='/generate'>Generate</a></li>
             {/* Todo - Show your login name ✅ */}
         { isAuthenticated ? (
             <>
-            <a href='/profile' className="p-4">signed in as: {user?.name}</a>
+            <a href='/profile' className="p-4">{user?.name}</a>
             <LogoutButton />
             </>
          ) : (

@@ -4,7 +4,7 @@ import Navbar from "./components/Navbar"
 import ProfilePage from "./components/ProfilePage"
 import AuthenticationGuard from "./components/AuthenticationGuard"
 import Signup from "./components/Signup"
-
+import ImageGeneration from "./components/ImageGeneration"
 
 function App() {
 
@@ -17,6 +17,7 @@ function App() {
       <Route path="/" element={<Hero />} />
       <Route path="/profile" element={<AuthenticationGuard childComponent={ProfilePage}/>} />
       <Route path="/sign-up" element={<Signup/>}/>
+      <Route path="/generate" element={<ImageGeneration/>}/>
     </Routes>
     </BrowserRouter>
     {/* <Profile />
