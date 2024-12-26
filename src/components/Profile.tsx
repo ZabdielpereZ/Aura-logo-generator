@@ -1,14 +1,15 @@
 import { useAuth0 } from "@auth0/auth0-react";
 
 const Profile = () => {
-  const { user, isAuthenticated, isLoading, getAccessTokenSilently } = useAuth0();
+  const { user, isAuthenticated, isLoading, getAccessTokenSilently } =
+    useAuth0();
 
   if (isLoading) {
     return <div>Loading ...</div>;
   }
 
-  // Gives us back our valid Token in console proof we logged in  
-  getAccessTokenSilently().then((token) => console.log(token))
+  // Gives us back our valid Token in console proof we logged in
+  getAccessTokenSilently().then((token) => console.log(token));
 
   return (
     isAuthenticated && (

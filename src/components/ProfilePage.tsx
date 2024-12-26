@@ -8,7 +8,7 @@ const ProfilePage = () => {
       <>
         {/* Image upload section */}
         <div className="md:container md:mx-auto dark:bg-gray-900">
-          <h1 className="text-3xl text-[#38c292] text-center">Images</h1>
+          <h1 className="text-3xl text-[#38c292] text-center">Logos</h1>
           <p className="text-xl text-gray-700 dark:text-gray-200">
             Welcome to Aura here are your images!
           </p>
