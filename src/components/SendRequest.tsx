@@ -8,7 +8,7 @@ const SendRequest = () => {
   const fetchProtectedData = async () => {
     const token = await getAccessTokenSilently();
     console.log(token);
-    const response = await fetch("http://localhost:5000/protected", {
+    const response = await fetch("https://aura-library.onrender.com/users/login", {
       //this endpoint will be different, im just using the localhost as a placeholder
       headers: {
         Authorization: `Bearer ${token}`,

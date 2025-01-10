@@ -1,5 +1,6 @@
 import Profile from "./Profile";
 import example from "../assets/example.png";
+import Board from "./Board";
 
 const ProfilePage = () => {
   return (
@@ -7,9 +8,9 @@ const ProfilePage = () => {
       <Profile />
       <>
         {/* Image upload section */}
-        <div className="md:container md:mx-auto dark:bg-gray-900">
+        <div className="md:container md:mx-auto dark:bg-gray-900 pb-5">
           <h1 className="text-3xl text-[#38c292] text-center">Logos</h1>
-          <p className="text-xl text-gray-700 dark:text-gray-200">
+          <p className="text-xl text-gray-700 dark:text-gray-200 pl-9">
             Welcome to Aura here are your images!
           </p>
           {/* Image card example 1 */}
@@ -45,6 +46,12 @@ const ProfilePage = () => {
             </div>
           </div>
         </div>
+      </>
+      {/* Rankings Page */}
+      <>
+      <div className="md:container md:mx-auto pt-5 pb-5">
+        <Board/>
+      </div>
       </>
     </>
   );
