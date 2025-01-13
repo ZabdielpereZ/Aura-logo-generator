@@ -15,19 +15,19 @@ const ImageGeneration = () => {
   const handleClick = async (): Promise<void> => {
     setLoading(true);
     try {
-      interface ImageResponseData {
-        url: string;
-      }
-      // interface GenerateImageResponse {
-      //   data: ImageResponseData[];
+      // interface ImageResponseData {
+      //   url: string;
       // }
-      interface Image {
-        url: string;
-      }
-      interface ImageResponseData {
-        url: string;
-        // other properties
-      }
+      // // interface GenerateImageResponse {
+      // //   data: ImageResponseData[];
+      // // }
+      // interface Image {
+      //   url: string;
+      // }
+      // interface ImageResponseData {
+      //   url: string;
+      //   // other properties
+      // }
       // Ensure your data property is compatible
       // interface ImagesResponse {
       //   _request: {
