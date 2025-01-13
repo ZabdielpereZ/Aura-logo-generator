@@ -38,7 +38,7 @@ const ImageGeneration = () => {
       interface GenerateImageResponse {
         data: ImageResponseData[];
       }
-      const response: GenerateImageResponse = await openai.images.generate({
+      const response: any = await openai.images.generate({
         model: "dall-e-3",
         prompt,
         n: 1,

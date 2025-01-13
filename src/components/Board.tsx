@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import Profiles from './Profiles';
 import { Leaderboard } from './DataBase';
 

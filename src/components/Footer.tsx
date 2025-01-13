@@ -1,4 +1,3 @@
-import React from "react";
 import Logo from "../assets/Logo.png";
 const Footer: React.FC = () => (
   <footer className="bg-teal rounded-lg shadow dark:bg-gray-900 bg-shrink">
