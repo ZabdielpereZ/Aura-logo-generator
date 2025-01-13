@@ -1,4 +1,4 @@
-import React from 'react'
+
 
 export default function profiles({ Leaderboard }) {
   return (
@@ -8,12 +8,12 @@ export default function profiles({ Leaderboard }) {
   )
 }
 
-function Item(data){
+function Item(data: any){
     return (
 
         <>
             {
-                data.map((value, index) => (
+                data.map((value: any, index: any) => (
                     <div className="pt-5" key={index}>
                         <div className="item">
                             <img className='rounded-full' src={value.img} alt="" />

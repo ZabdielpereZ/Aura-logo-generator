@@ -10,7 +10,7 @@ const ImageGeneration = () => {
     dangerouslyAllowBrowser: true,
   });
   const [prompt, setPrompt] = useState<string>("");
-  const [url, setUrl] = useState<string>("");
+  const [url, setUrl] = useState<string | null>(null);
   const [loading, setLoading] = useState<boolean>(false);
   const handleClick = async (): Promise<void> => {
     setLoading(true);
@@ -31,7 +31,7 @@ const ImageGeneration = () => {
       // Ensure your data property is compatible
       interface ImagesResponse {
         _request: {
-          id?: string | null;
+          id?: string;
         };
         data: Image[];
       }
@@ -56,7 +56,7 @@ const ImageGeneration = () => {
   return (
     <div className="md:container md:mx-auto justify-center content-center items-center">
       <div className="text-5xl text-[#0ae192] flex justify-center p-5 font-mono">
-        AI Logo Generator
+        AI Image Generator
       </div>
       {/* Generated Image section */}
       <div className="flex justify-center md:container md:mx-auto">
@@ -109,7 +109,7 @@ const ImageGeneration = () => {
         </button>
 
         <button className="text-[#023] bg-purple-700 hover:bg-purple-800 focus:outline-none focus:ring-4 focus:ring-purple-300 font-medium rounded-full text-sm px-5 py-2.5 text-center mb-2 dark:bg-[#38c292] dark:hover:bg-[#217658] dark:focus:ring-green-900">
-          Design Custom Logo
+          Delete
         </button>
       </div>
 

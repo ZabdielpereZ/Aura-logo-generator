@@ -5,6 +5,7 @@ import ProfilePage from "./components/ProfilePage";
 import AuthenticationGuard from "./components/AuthenticationGuard";
 import Signup from "./components/Signup";
 import ImageGeneration from "./components/ImageGeneration";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           <Route path="/sign-up" element={<Signup />} />
           <Route path="/generate" element={<ImageGeneration />} />
         </Routes>
+        <Footer />
       </BrowserRouter>
       {/* <Profile />
     <Hero /> */}
