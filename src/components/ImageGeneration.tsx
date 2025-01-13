@@ -15,29 +15,29 @@ const ImageGeneration = () => {
   const handleClick = async (): Promise<void> => {
     setLoading(true);
     try {
-      interface ImageResponseData {
-        url: string;
-      }
-      interface GenerateImageResponse {
-        data: ImageResponseData[];
-      }
-      interface Image {
-        url: string;
-      }
-      interface ImageResponseData {
-        url: string;
-        // other properties
-      }
+      // interface ImageResponseData {
+      //   url: string;
+      // }
+      // // interface GenerateImageResponse {
+      // //   data: ImageResponseData[];
+      // // }
+      // interface Image {
+      //   url: string;
+      // }
+      // interface ImageResponseData {
+      //   url: string;
+      //   // other properties
+      // }
       // Ensure your data property is compatible
-      interface ImagesResponse {
-        _request: {
-          id?: string;
-        };
-        data: Image[];
-      }
-      interface GenerateImageResponse {
-        data: ImageResponseData[];
-      }
+      // interface ImagesResponse {
+      //   _request: {
+      //     id?: string;
+      //   };
+      //   data: Image[];
+      // }
+      // interface GenerateImageResponse {
+      //   data: ImageResponseData[];
+      // }
       const response: any = await openai.images.generate({
         model: "dall-e-3",
         prompt,
