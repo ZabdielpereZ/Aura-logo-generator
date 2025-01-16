@@ -1,7 +1,8 @@
 import OpenAI from "openai";
 import "../App.css";
 import example from "../assets/example.png";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { ToastContainer, toast } from 'react-toastify';
 
 const ImageGeneration = () => {
   console.log(import.meta.env.VITE_OPENAI_API_KEY);
@@ -10,34 +11,31 @@ const ImageGeneration = () => {
     dangerouslyAllowBrowser: true,
   });
   const [prompt, setPrompt] = useState<string>("");
-  const [url, setUrl] = useState<string | null>(null);
+  const [url, setUrl] = useState<string>("");
   const [loading, setLoading] = useState<boolean>(false);
+  const [images, setImages] = useState<string[]>(() => {
+    const storedImages = localStorage.getItem("images");
+    if (storedImages) {
+      return JSON.parse(storedImages);
+    } else {
+      return [];
+    }
+  });
+
+  const saveImg = () => {
+    toast("Image saved!")
+    // spread operator
+    setImages([...images, url]);
+  };
+
+  useEffect(() => {
+    // When images array changes, save it to local storage
+    localStorage.setItem("images", JSON.stringify(images));
+  }, [images]);
+
   const handleClick = async (): Promise<void> => {
     setLoading(true);
     try {
-      // interface ImageResponseData {
-      //   url: string;
-      // }
-      // // interface GenerateImageResponse {
-      // //   data: ImageResponseData[];
-      // // }
-      // interface Image {
-      //   url: string;
-      // }
-      // interface ImageResponseData {
-      //   url: string;
-      //   // other properties
-      // }
-      // Ensure your data property is compatible
-      // interface ImagesResponse {
-      //   _request: {
-      //     id?: string;
-      //   };
-      //   data: Image[];
-      // }
-      // interface GenerateImageResponse {
-      //   data: ImageResponseData[];
-      // }
       const response: any = await openai.images.generate({
         model: "dall-e-3",
         prompt,
@@ -45,6 +43,8 @@ const ImageGeneration = () => {
         size: "1024x1024",
       });
       let imageUrl = response.data[0].url;
+      // Saving image in local storage
+      localStorage.setItem("generatedImageUrl", imageUrl);
       setUrl(imageUrl);
     } catch (error) {
       console.error("Error generating image:", error);
@@ -52,6 +52,19 @@ const ImageGeneration = () => {
       setLoading(false);
     }
   };
+
+  // Load the URL from local storage when the component mounts, keeps image on image generation page
+  useEffect(() => {
+    const storedImageUrl = localStorage.getItem("generatedImageUrl");
+    if (storedImageUrl) {
+      setUrl(storedImageUrl);
+    }
+  }, []);
+
+  // const handleDelete = (): void => {
+  //   // localStorage.removeItem("generatedImageUrl");
+  //   setUrl("");
+  // };
 
   return (
     <div className="md:container md:mx-auto justify-center content-center items-center">
@@ -103,14 +116,22 @@ const ImageGeneration = () => {
           </div>
         </form>
       </div>
+      {/* Save image button */}
       <div className="flex justify-center space-x-2">
-        <button className="text-[#023] bg-purple-700 hover:bg-purple-800 focus:outline-none focus:ring-4 focus:ring-purple-300 font-medium rounded-full text-sm px-5 py-2.5 text-center mb-2 dark:bg-[#38c292] dark:hover:bg-[#217658] dark:focus:ring-green-900">
-          Save Logo
+        <button
+          type="button"
+          onClick={saveImg}
+          className="text-[#023] bg-purple-700 hover:bg-purple-800 focus:outline-none focus:ring-4 focus:ring-purple-300 font-medium rounded-full text-sm px-5 py-2.5 text-center mb-2 dark:bg-[#38c292] dark:hover:bg-[#217658] dark:focus:ring-green-900"
+        >
+          Save Image
         </button>
 
-        <button className="text-[#023] bg-purple-700 hover:bg-purple-800 focus:outline-none focus:ring-4 focus:ring-purple-300 font-medium rounded-full text-sm px-5 py-2.5 text-center mb-2 dark:bg-[#38c292] dark:hover:bg-[#217658] dark:focus:ring-green-900">
-          Delete
-        </button>
+        {/* <button
+          onClick={handleDelete}
+          className="text-[#023] bg-purple-700 hover:bg-purple-800 focus:outline-none focus:ring-4 focus:ring-purple-300 font-medium rounded-full text-sm px-5 py-2.5 text-center mb-2 dark:bg-[#38c292] dark:hover:bg-[#217658] dark:focus:ring-green-900"
+        >
+          Clear Image
+        </button> */}
       </div>
 
       <div className="text-white text-opacity-30 flex justify-center pb-4 pt-4">
@@ -118,6 +139,7 @@ const ImageGeneration = () => {
           Developed by <span>Team Aura</span>
         </p>
       </div>
+      <ToastContainer />
     </div>
   );
 };

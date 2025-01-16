@@ -21,8 +21,8 @@ function App() {
           <Route path="/sign-up" element={<Signup />} />
           <Route path="/generate" element={<ImageGeneration />} />
         </Routes>
-        {/* <Footer /> */}
       </BrowserRouter>
+        {/* <Footer /> */}
       {/* <Profile />
     <Hero /> */}
     </>

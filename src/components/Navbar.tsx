@@ -63,11 +63,18 @@ const Navbar = () => {
               : "fixed left-[-100%]"
           }
         >
-          <ul className="pt-24 uppercase p-4">
-            <li className="p-4 border-b">Home</li>
+          <ul className="uppercase p-4">
+              <a className="pl-4" href="/">Home</a>
+            <li className="p-4 border-b">
+
+            </li>
             {/* Todo - Show your login name */}
-            <li className="p-4 border-b">Generate</li>
-            <li className="p-4">signed in as: {user?.name}</li>
+            <li className="p-4 border-b">
+              <a href="/generate">Generate</a>
+            </li>
+            <li className="p-4">
+            <a href="/profile">signed in as: {user?.name}</a>
+            </li>
           </ul>
         </div>
       </div>
