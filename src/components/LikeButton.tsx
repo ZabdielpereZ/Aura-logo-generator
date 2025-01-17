@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import {  useState } from "react";
 import { HiHeart } from "react-icons/hi";
 
 const LikeButton = () => {
