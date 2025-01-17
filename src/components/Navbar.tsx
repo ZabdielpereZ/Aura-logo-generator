@@ -77,6 +77,9 @@ const Navbar = () => {
             <li className="p-4">
             <a href="/profile">signed in as: {user?.name}</a>
             </li>
+            <li className="p-4">
+              <LogoutButton />
+            </li>
           </ul>
         </div>
       </div>
