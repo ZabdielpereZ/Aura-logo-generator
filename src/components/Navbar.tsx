@@ -68,7 +68,6 @@ const Navbar = () => {
           <ul className="uppercase p-4">
               <a className="pl-4" href="/">Home</a>
             <li className="p-4 border-b">
-
             </li>
             {/* Todo - Show your login name */}
             <li className="p-4 border-b">
