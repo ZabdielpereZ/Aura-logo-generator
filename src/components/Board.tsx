@@ -13,9 +13,9 @@ export default function Board() {
 
   return (
     <div className="md:container md:mx-auto text-xl bg-[#124f6d] pt-4 pl-4 text-white">
-        <h1 className='p-2 text-2xl'>AURA Logo Leaderboard</h1>
+        <h1 className='p-2 text-3xl font-mono text-center'>AURA Logo Leaderboard</h1>
 
-        <div className="duration">
+        <div className="text-center">
             <button onClick={handleClick} className='pr-4' data-id='7'>7 Days</button>
             <button onClick={handleClick} className='pr-4' data-id='30'>30 Days</button>
             <button onClick={handleClick} className='pr-4' data-id='0'>All-Time</button>
@@ -47,6 +47,7 @@ function between(data, between){
         } else{
             return b.score - a.score;
         }
+        
     })
 
 }

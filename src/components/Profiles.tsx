@@ -1,39 +1,31 @@
-
+import LikeButton from "./LikeButton";
 
 export default function profiles({ Leaderboard }) {
   return (
-        <div id="profile">
-            {Item(Leaderboard)}
+    <div id="profile">
+      <Item data={Leaderboard} />
+    </div>
+  );
+}
+
+function Item({ data }) {
+  return (
+    <>
+      {data.map((value, index) => (
+        <div className="pt-5" key={index}>
+          <div className="item">
+            <img className="rounded-full" src={value.img} alt="" />
+            <h3 className="font-mono">{value.name}</h3>
+            <span className="font-mono">{value.location}</span>
+            <img className="rounded-full" src={value.image} alt="" />
+
+            <div className="info"></div>
+          </div>
+          <div className="item">
+            <LikeButton />
+          </div>
         </div>
-  )
+      ))}
+    </>
+  );
 }
-
-function Item(data: any){
-    return (
-
-        <>
-            {
-                data.map((value: any, index: any) => (
-                    <div className="pt-5" key={index}>
-                        <div className="item">
-                            <img className='rounded-full' src={value.img} alt="" />
-            
-                            <div className="info">
-                                <h3 className='name text-dark'>{value.name}</h3>    
-                                <span>{value.location}</span>
-                            </div>                
-                        </div>
-                        <div className="item">
-                            <span>{value.score}</span>
-                        </div>
-                    </div>
-                    )
-                )
-            }
-        </>
-
-        
-    )
-}
-
-

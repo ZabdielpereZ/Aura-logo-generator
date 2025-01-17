@@ -9,11 +9,15 @@ const SendRequest = () => {
     const token = await getAccessTokenSilently();
     console.log(token);
     const response = await fetch("https://aura-library.onrender.com/users/login", {
-      //this endpoint will be different, im just using the localhost as a placeholder
+      method: "POST",
       headers: {
         Authorization: `Bearer ${token}`,
+        "Content-Type": "application/json",
       },
     });
+    body: JSON.stringify({
+      auth0_token: token
+    })
     const data = await response.json();
     console.log(data);
   };

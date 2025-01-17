@@ -5,6 +5,7 @@ import LoginButton from "./LoginButton";
 import LogoutButton from "./LogoutButton";
 import logo from "../assets/logo.png";
 import { useNavigate } from "react-router-dom";
+// import SendRequest from "./SendRequest";
 
 const Navbar = () => {
   // Grab user name
@@ -46,6 +47,7 @@ const Navbar = () => {
                 {user?.name}
               </a>
               <LogoutButton />
+              {/* <SendRequest /> */}
             </>
           ) : (
             <>

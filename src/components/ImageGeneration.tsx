@@ -54,12 +54,12 @@ const ImageGeneration = () => {
   };
 
   // Load the URL from local storage when the component mounts, keeps image on image generation page
-  useEffect(() => {
-    const storedImageUrl = localStorage.getItem("generatedImageUrl");
-    if (storedImageUrl) {
-      setUrl(storedImageUrl);
-    }
-  }, []);
+  // useEffect(() => {
+  //   const storedImageUrl = localStorage.getItem("generatedImageUrl");
+  //   if (storedImageUrl) {
+  //     setUrl(storedImageUrl);
+  //   }
+  // }, []);
 
   // const handleDelete = (): void => {
   //   // localStorage.removeItem("generatedImageUrl");
