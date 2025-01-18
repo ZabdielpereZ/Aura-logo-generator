@@ -1,4 +1,4 @@
-import LikeButton from "./LikeButton";
+import CommentSection from "./CommentSection";
 
 export default function profiles({ Leaderboard }) {
   return (
@@ -18,11 +18,10 @@ function Item({ data }) {
             <h3 className="font-mono">{value.name}</h3>
             <span className="font-mono">{value.location}</span>
             <img className="rounded-full" src={value.image} alt="" />
-
+            <CommentSection/>
             <div className="info"></div>
           </div>
           <div className="item">
-            <LikeButton />
           </div>
         </div>
       ))}
