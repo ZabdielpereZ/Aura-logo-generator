@@ -13,10 +13,12 @@ const Profile = () => {
 
   return (
     isAuthenticated && (
-      <div className="pl-4 pb-5">
+      <div className="pl-11 pb-5">
         <img className="rounded-3xl" src={user?.picture} alt={user?.name} />
-        <h2 className=" ">{user?.name}</h2>
-        <p>{user?.email}</p>
+        <div className="font-mono text-2xl text-[#ffffff] bg-[#0ca884] rounded-lg w-96 text-center">
+        <h2>{user?.name}</h2>
+        <p >{user?.email}</p>
+        </div>
       </div>
     )
   );

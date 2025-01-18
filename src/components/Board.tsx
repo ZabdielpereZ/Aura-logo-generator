@@ -13,7 +13,7 @@ export default function Board() {
 
   return (
     <div className="md:container md:mx-auto text-xl bg-[#124f6d] pt-4 pl-4 text-white">
-        <h1 className='p-2 text-3xl font-mono text-center'>AURA Logo Leaderboard</h1>
+        <h1 className='p-2 text-3xl font-mono text-center text-[#08efb1]'>AURA Logo Leaderboard</h1>
 
         <div className="text-center">
             <button onClick={handleClick} className='pr-4' data-id='7'>7 Days</button>

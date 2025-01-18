@@ -28,7 +28,7 @@ const ProfilePage = () => {
       <>
         {/* Image upload section */}
         <div className="md:container md:mx-auto dark:bg-gray-900 pb-5">
-          <h1 className="text-3xl text-[#38c292] text-center font-mono">
+          <h1 className="text-3xl text-[#08efb1] text-center font-mono">
             Images
           </h1>
           <p className="text-xl text-gray-700 dark:text-gray-200 px-4 font-mono pb-2">
@@ -65,7 +65,7 @@ const ProfilePage = () => {
       </>
       {/* Rankings Page */}
       <>
-        <div className="md:container md:mx-auto pt-5 pb-5">
+        <div className="md:container md:mx-auto pt-5 pb-20">
           <Board />
         </div>
       </>

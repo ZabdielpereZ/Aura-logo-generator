@@ -5,7 +5,7 @@ import ProfilePage from "./components/ProfilePage";
 import AuthenticationGuard from "./components/AuthenticationGuard";
 import Signup from "./components/Signup";
 import ImageGeneration from "./components/ImageGeneration";
-// import Footer from "./components/Footer";
+import Foot from "./components/Foot";
 
 function App() {
   return (
@@ -22,7 +22,7 @@ function App() {
           <Route path="/generate" element={<ImageGeneration />} />
         </Routes>
       </BrowserRouter>
-        {/* <Footer /> */}
+      <Foot />
       {/* <Profile />
     <Hero /> */}
     </>

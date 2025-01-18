@@ -1,5 +1,4 @@
 import OpenAI from "openai";
-import "../App.css";
 import example from "../assets/example.png";
 import { useEffect, useState } from "react";
 import { ToastContainer, toast } from 'react-toastify';
@@ -68,7 +67,7 @@ const ImageGeneration = () => {
 
   return (
     <div className="md:container md:mx-auto justify-center content-center items-center">
-      <div className="text-5xl text-[#0ae192] flex justify-center p-5 font-mono">
+      <div className="text-5xl text-[#0ae192] flex justify-center p-5 pt-20 font-mono">
         AI Image Generator
       </div>
       {/* Generated Image section */}
@@ -117,7 +116,7 @@ const ImageGeneration = () => {
         </form>
       </div>
       {/* Save image button */}
-      <div className="flex justify-center space-x-2">
+      <div className="flex justify-center space-x-2 pb-20">
         <button
           type="button"
           onClick={saveImg}
@@ -132,12 +131,6 @@ const ImageGeneration = () => {
         >
           Clear Image
         </button> */}
-      </div>
-
-      <div className="text-white text-opacity-30 flex justify-center pb-4 pt-4">
-        <p>
-          Developed by <span>Team Aura</span>
-        </p>
       </div>
       <ToastContainer />
     </div>

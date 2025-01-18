@@ -20,14 +20,14 @@ const Hero = () => {
           </p>
           <ReactTyped
             className="md:text-5xl sm:text-4xl text-xl font-bold md:pl-4 pl-2 text-[#38C292] "
-            strings={["Fantasy.", "Imagination.", "Creation.", "Innovation"]}
+            strings={["Fantasy", "Imagination", "Creation", "Innovation"]}
             typeSpeed={120}
             backSpeed={140}
             loop
           />
         </div>
         <p className="md:text-2xl text-xl font-bold text-gray-500">
-          Imagine it and can create it!
+          Imagine it. Create it!
         </p>
         <button
           onClick={handleClick}
