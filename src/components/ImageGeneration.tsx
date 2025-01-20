@@ -23,7 +23,7 @@ const ImageGeneration = () => {
 
   const saveImg = () => {
     toast("Image saved!")
-    // spread operator
+    // spread operator [ ... ]<-- allows you to unpack the elements of an array or the properties of an object into another array or object.
     setImages([...images, url]);
   };
 
@@ -120,7 +120,7 @@ const ImageGeneration = () => {
         <button
           type="button"
           onClick={saveImg}
-          className="text-[#023] bg-purple-700 hover:bg-purple-800 focus:outline-none focus:ring-4 focus:ring-purple-300 font-medium rounded-full text-sm px-5 py-2.5 text-center mb-2 dark:bg-[#38c292] dark:hover:bg-[#217658] dark:focus:ring-green-900"
+          className="text-[#023] bg-teal-700 hover:bg-teal-800 focus:outline-none focus:ring-4 focus:ring-purple-300 font-medium rounded-full text-sm px-5 py-2.5 text-center mb-2 dark:bg-[#38c292] dark:hover:bg-[#217658] dark:focus:ring-green-900"
         >
           Save Image
         </button>
